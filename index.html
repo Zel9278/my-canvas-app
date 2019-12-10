@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  </head>
+  <body>
+    <div id="box">
+      <canvas class="layer1" id="draw"></canvas>
+      <canvas class="layer2" id="draw2"></canvas>
+    </div>
+    <div id="item">
+      <div id="item1">
+        <p>linesize<input type="range" min="1" max="100" value="2" id="lineWidth"><span id="lineNum">5</span></p>
+        <p>alpha<input type="range" min="1" max="100" value="100" id="alpha"><span id="alphaNum">100</span></p>
+	    </div>
+      <div id="item2" class="rounded-circle">
+        <button id="pencil" onclick="tool(1)">pen</button>
+        <button id="crayon" onclick="tool(2)">writer</button>
+        <button id="destination-over" onclick="tool(3)">rough</button>
+        <button id="eraser" onclick="tool(4)">eraser</button>
+        <button id="delete_canvas" onclick="delete_canvas()">clear all canvas</button>
+        <input id="hex" type="color" value="#000000">
+	    </div>
+      <div id="item4">
+        <input id="filename" value="filename..." placeholder="SetFileName">
+        <button id="save" style="width:100px;" onclick="save()">save</button>
+        <br>
+        <input id="upload" name="image" type="file">
+	    </div>
+      <div id="item5">
+        <p>canvas size</p>
+        <input style="width: 60px;" id="canvas_width" placeholder="width">
+        <input style="width: 60px;" id="canvas_height" placeholder="height">
+        <button onclick="canvas_size()">set size</button> 
+      </div>
+    </div>
+    <div class="record">
+      <p>recording</p>
+      <button onclick="recstart();">start</button>
+      <button onclick="save_rec();">stop</button>
+      <p><a href="#" id="downloadlink" style="display:none;">download</a></p>
+    </div>
+  </body>
+</html>
